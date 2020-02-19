@@ -1,0 +1,39 @@
+{
+  "name": "fighting-in-tetris",
+  "version": "0.0.1",
+  "author": "shiopon01",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.3",
+    "@material-ui/styles": "^4.9.0",
+    "axios": "^0.19.2",
+    "next": "^9.2.2",
+    "notistack": "^0.9.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/next": "^9.0.0",
+    "@types/node": "^13.7.2",
+    "@types/react": "^16.9.20",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-redux": "^7.1.7",
+    "@types/redux-logger": "^3.0.7",
+    "typescript": "^3.7.5",
+    "typesync": "^0.6.1"
+  },
+  "browser": {
+    "child_process": false
+  }
+}
