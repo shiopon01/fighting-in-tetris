@@ -1,0 +1,9 @@
+export const WINDOW_WIDTH: number = 256;
+export const WINDOW_HEIGHT: number = 192;
+export const FIELD_WIDTH: number = (WINDOW_HEIGHT - 20) / 2;
+export const FIELD_HEIGHT: number = WINDOW_HEIGHT - 20;
+export const FIELD_MATH_WIDTH: number = 20
+export const FIELD_MATH_HEIGHT: number = 10
+export const MINO_SIZE: number = FIELD_HEIGHT / 20;
+export const FIELD_ZERO_WIDTH: number = -FIELD_WIDTH / 2 + MINO_SIZE / 2;
+export const FIELD_ZERO_HEIGHT: number = FIELD_HEIGHT / 2 - MINO_SIZE / 2;
