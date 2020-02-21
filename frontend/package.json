@@ -12,6 +12,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.3",
     "@material-ui/styles": "^4.9.0",
+    "@zeit/next-workers": "^1.0.0",
     "axios": "^0.19.2",
     "next": "^9.2.2",
     "notistack": "^0.9.7",
@@ -23,7 +24,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "three": "^0.113.2"
+    "three": "^0.113.2",
+    "worker-loader": "^2.0.0"
   },
   "devDependencies": {
     "@types/next": "^9.0.0",
