@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from "react";
+import React, { useEffect } from "react";
 import { NextPage } from "next";
 import { Canvas, useThree } from "react-three-fiber";
 
@@ -11,33 +11,17 @@ import Tetriminos from "../src/components/Tetriminos";
 import useTetrisWorker from "../src/customHooks/useTetrisWorker";
 
 const ThreePage: NextPage = (_props: any) => {
-  const [startWebWorker] = useTetrisWorker();
-  startWebWorker();
+  const [focusShortcut, lines, nextLines, hold] = useTetrisWorker();
+
+  useEffect(() => {
+    window.addEventListener("keydown", focusShortcut);
+    return () => {
+      window.removeEventListener("keydown", focusShortcut);
+    };
+  });
 
   // const size = useWindowSize();
-  const lines = [
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 8, 8, 0, 0, 2, 1],
-    [1, 0, 3, 3, 3, 3, 8, 5, 5, 5, 2, 1],
-    [1, 0, 5, 5, 6, 6, 6, 6, 6, 5, 2, 1],
-    [1, 0, 5, 3, 3, 6, 6, 4, 8, 8, 2, 1],
-    [1, 0, 5, 3, 3, 6, 4, 4, 4, 8, 8, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-  ];
+  // start();
 
   return (
     <div className={"div"}>
