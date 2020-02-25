@@ -6,18 +6,22 @@ let intervalId: NodeJS.Timeout;
 let displayIntervalId: NodeJS.Timeout;
 let tetris: any;
 
+const displayField = () => {
+  if (tetris === null) return;
+  ctx.postMessage({ operation: "display", lines: tetris.getField() });
+}
+
+const softDrop = () => {
+  if (tetris === null) return;
+  console.log("テトリミノ 1ブロック落下");
+}
+
 ctx.addEventListener("message", async event => {
   switch (event.data.operation) {
     case "start":
       tetris = new TetrisClass();
-      intervalId = setInterval(() => {
-        if (tetris === null) return;
-        console.log("テトリミノ 1ブロック落下");
-      }, 800);
-      displayIntervalId = setInterval(() => {
-        if (tetris === null) return;
-        ctx.postMessage({ operation: "display", lines: tetris.getField() });
-      }, 100);
+      intervalId = setInterval(softDrop, 800);
+      displayIntervalId = setInterval(displayField, 100);
       break;
 
     case "stop":

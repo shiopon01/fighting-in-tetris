@@ -20,8 +20,10 @@ const ThreePage: NextPage = (_props: any) => {
     };
   });
 
-  // const size = useWindowSize();
-  // start();
+  // useEffect(() => {
+  //   start();
+  //   return () => {};
+  // }, []);
 
   return (
     <div className={"div"}>
